@@ -13,13 +13,13 @@ spring5
 
 3:导入idea
 
-4:配置：![1](img/1.png)
+4:配置：![1](./img/1.png)
 
 等待编译完成（半小时到一小时）
 
 5:运行core包下的test
 
-![2](/Users/yang/spring/spring5/img/2.png)
+![2](./img/2.png)
 
 
 
