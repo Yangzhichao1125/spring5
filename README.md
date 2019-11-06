@@ -7,7 +7,7 @@ spring5
 
 步骤：
 
-1:安装gradle
+1:安装gradle:   使用4.9版本
 
 2:下载springframwork源码
 
