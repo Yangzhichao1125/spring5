@@ -1,11 +1,14 @@
 package com.yang.bean;
 
+import org.springframework.stereotype.Component;
+
 /**
  * This is Description
  *
  * @author yang
  * @date 2019/11/06
  */
+@Component
 public class Student {
 
 	public Student(final String name, final int age) {
