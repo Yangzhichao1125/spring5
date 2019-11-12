@@ -521,6 +521,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
+			//spring第六步准备工厂
 			prepareBeanFactory(beanFactory);
 
 			try {
@@ -649,6 +650,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		beanFactory.addPropertyEditorRegistrar(new ResourceEditorRegistrar(this, getEnvironment()));
 
 		// Configure the bean factory with context callbacks.
+		//spring第六步重要点：添加后置处理器
 		beanFactory.addBeanPostProcessor(new ApplicationContextAwareProcessor(this));
 		beanFactory.ignoreDependencyInterface(EnvironmentAware.class);
 		beanFactory.ignoreDependencyInterface(EmbeddedValueResolverAware.class);

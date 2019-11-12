@@ -14,6 +14,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class YangTest {
 
 	public static void main(String[] args) {
+		//spring第一步实例化上下文
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConf.class);
 		Student bean = context.getBean(Student.class);
 		UserEntity user = context.getBean(UserEntity.class);

@@ -107,6 +107,8 @@ public class GenericApplicationContext extends AbstractApplicationContext implem
 	 * Create a new GenericApplicationContext.
 	 * @see #registerBeanDefinition
 	 * @see #refresh
+	 *
+	 * spring第二步创建beanFactoty
 	 */
 	public GenericApplicationContext() {
 		this.beanFactory = new DefaultListableBeanFactory();

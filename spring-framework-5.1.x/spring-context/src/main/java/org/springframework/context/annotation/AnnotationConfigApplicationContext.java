@@ -62,8 +62,9 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * through {@link #register} calls and then manually {@linkplain #refresh refreshed}.
 	 */
 	public AnnotationConfigApplicationContext() {
-		//创建一个读取bean注解的读取器
+		//spring第三步 构造函数实例化一个bdreader
 		this.reader = new AnnotatedBeanDefinitionReader(this);
+		//scanner不重要，很少用到
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
 
@@ -72,22 +73,21 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * @param beanFactory the DefaultListableBeanFactory instance to use for this context
 	 */
 	public AnnotationConfigApplicationContext(DefaultListableBeanFactory beanFactory) {
+
 		super(beanFactory);
 		this.reader = new AnnotatedBeanDefinitionReader(this);
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
 
 	/**
-	 * Create a new AnnotationConfigApplicationContext, deriving bean definitions
-	 * from the given annotated classes and automatically refreshing the context.
-	 * @param annotatedClasses one or more annotated classes,
-	 * e.g. {@link Configuration @Configuration} classes
+	 * 超哥特色spring
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... annotatedClasses) {
 		//先调用父类构造方法再调用自己的构造方法
-		//在自己的构造方法中初始化一个读取器和扫描器
 		this();
+		//在自己的构造方法中初始化一个读取器和扫描器
 		register(annotatedClasses);
+		//spring第五步调用refresh方法
 		refresh();
 	}
 
